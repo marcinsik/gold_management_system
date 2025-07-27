@@ -1,68 +1,60 @@
-# Magazyn Złota - Aplikacja Desktopowa
+# Gold Warehouse - Desktop Application
 
-## Opis
-Aplikacja desktopowa do zarządzania magazynem złota, napisana w Pythonie z wykorzystaniem bibliotek Tkinter (GUI) i SQLite3 (baza danych). Program działa offline i pozwala na pełne zarządzanie stanami złota oraz historią transakcji.
+## Description
+A desktop application for managing a gold warehouse, written in Python using the Tkinter (GUI) and SQLite3 (database) libraries. The program works offline and allows for full management of gold stocks and transaction history.
 
-## Funkcjonalności
+## Features
 
-### Główne okno (Magazyn)
-- Wyświetla tabelę z aktualnym stanem magazynu złota
-- Kolumny: Typ Złota, Waga Jednostkowa (g), Czystość (%), Ilość, Łączna Waga (g)
-- Przyciski: Dodaj Nowe Złoto, Kup Złoto, Sprzedaj Złoto, Pokaż Historię Transakcji, Wyjdź
+### Main window (Warehouse)
+- Displays a table with the current gold warehouse inventory
+- Columns: Gold Type, Unit Weight (g), Purity (%), Quantity, Total Weight (g)
+- Buttons: Add New Gold, Buy Gold, Sell Gold, Show Transaction History, Exit
 
-### Zarządzanie typami złota
-- Dodawanie nowych typów złota (sztabki, monety, itp.)
-- Walidacja unikalności typów
-- Kontrola poprawności danych (waga, czystość)
+### Gold type management
+- Adding new gold types (bars, coins, etc.)
+- Validation of type uniqueness
+- Data validity check (weight, purity)
 
-### Transakcje
-- **Kupno złota**: Dodawanie złota do magazynu
-- **Sprzedaż złota**: Usuwanie złota z magazynu (z kontrolą dostępności)
-- Automatyczne aktualizowanie stanów magazynu
-- Zapisywanie pełnej historii transakcji
+### Transactions
+- **Buying gold**: Adding gold to the warehouse
+- **Selling gold**: Removing gold from the warehouse (with availability check)
+- Automatic updating of warehouse stocks
+- Saving the full transaction history
 
-### Historia transakcji
-- Pełna historia wszystkich transakcji
-- Wyświetlanie: Data, Typ Złota, Typ Transakcji, Ilość, Cena, Wartość, Opis
-- Sortowanie chronologiczne (najnowsze na górze)
+### Transaction history
+- Full history of all transactions
+- Display: Date, Gold Type, Transaction Type, Quantity, Price, Value, Description
+- Chronological sorting (most recent at the top)
 
-## Wymagania
+## Requirements
 - Python 3.7+
-- Biblioteki: tkinter, sqlite3 (wbudowane w Python)
+- Libraries: tkinter, sqlite3 (built into Python)
 
-## Instalacja i uruchomienie
+## Installation and launch
 
-1. Skopiuj pliki `gold_vault.py` i `database.py` do jednego katalogu
-2. Uruchom program:
-   ```bash
+1. Copy the `gold_vault.py` and `database.py` files to a single directory
+2. Launch the program:
+```bash
    python gold_vault.py
    ```
 
-## Struktura bazy danych
+## Database structure
 
-### Tabela `inventory`
-- `id`: Klucz główny
-- `type`: Typ złota (unikalny)
-- `unit_weight`: Waga jednostkowa w gramach
-- `purity`: Czystość w procentach
-- `quantity`: Ilość w magazynie
+### `inventory` table
+- `id`: Primary key
+- `type`: Gold type (unique)
+- `unit_weight`: Unit weight in grams
+- `purity`: Purity in percent
+- `quantity`: Quantity in stock
 
-### Tabela `transactions`
-- `id`: Klucz główny
-- `gold_type_id`: Odniesienie do typu złota
-- `transaction_type`: "Kupno" lub "Sprzedaż"
-- `quantity`: Ilość transakcji
-- `price_per_unit`: Cena za jednostkę
-- `transaction_date`: Data transakcji
-- `description`: Opis transakcji
+### `transactions` table
+- `id`: Primary key
+- `gold_type_id`: Reference to gold type
+- `transaction_type`: “Purchase” or “Sale”
+- `quantity`: Transaction quantity
+- `price_per_unit`: Price per unit
+- `transaction_date`: Transaction date
+- `description`: Transaction description
 
-## Plik bazy danych
-Baza danych jest automatycznie tworzona w pliku `gold_vault.db` w katalogu programu.
-
-## Obsługa błędów
-- Walidacja wszystkich pól wprowadzania
-- Kontrola dostępności przy sprzedaży
-- Komunikaty o błędach dla użytkownika
-- Bezpieczne operacje na bazie danych
-
-
+## Database file
+The database is automatically created in the `gold_vault.db` file in the program directory.
