@@ -65,5 +65,4 @@ Baza danych jest automatycznie tworzona w pliku `gold_vault.db` w katalogu progr
 - Komunikaty o błędach dla użytkownika
 - Bezpieczne operacje na bazie danych
 
-## Autor
-Program stworzony zgodnie ze specyfikacją zarządzania magazynem złota.
+
