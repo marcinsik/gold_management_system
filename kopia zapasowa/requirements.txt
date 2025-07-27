@@ -1,0 +1,11 @@
+# Wymagania dla aplikacji Magazyn Złota
+# Wszystkie biblioteki są wbudowane w Python - nie są wymagane dodatkowe instalacje
+
+# Główne biblioteki używane:
+# - tkinter (GUI) - wbudowana w Python
+# - sqlite3 (baza danych) - wbudowana w Python
+# - datetime - wbudowana w Python
+# - typing - wbudowana w Python (od Python 3.5+)
+# - os - wbudowana w Python
+
+# Minimalna wersja Python: 3.7+
